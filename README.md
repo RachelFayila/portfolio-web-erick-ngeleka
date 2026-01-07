@@ -1,9 +1,11 @@
 # portfolio-web-Erick-Ngeleka
 
-🌟 Présentation
-Portfolio web professionnel d'Erick Ngeleka, un leader congolais combinant excellence professionnelle, parcours sportif de haut niveau et leadership institutionnel. Le site présente ses multiples dimensions en tant que Chef Produit Marketing chez Rawbank, tennisman élite et Président de la Ligue de Tennis de Kinshasa (LITEKIN).
+# Présentation
 
-🎯 Objectifs du Projet
+Portfolio web professionnel d'Erick Ngeleka, un leader congolais combinant excellence professionnelle, parcours sportif de haut niveau et leadership institutionnel. Le site présente ses multiples dimensions en tant que Chef Produit Marketing chez Rawbank, Responsable du programme We Act, tennisman élite et Président de la Ligue de Tennis de Kinshasa (LITEKIN).
+
+# Objectifs du Projet
+
 Présenter le profil multidimensionnel d'Erick Ngeleka
 
 Mettre en valeur son parcours professionnel, sportif et académique
@@ -12,8 +14,10 @@ Faciliter les collaborations et contacts professionnels
 
 Inspirer la jeunesse congolaise par l'exemple
 
-✨ Fonctionnalités
-🏠 Page d'Accueil
+# Fonctionnalités
+
+# Page d'Accueil
+
 Section hero avec présentation principale
 
 Statistiques clés (expérience, tennis, diplômes)
@@ -22,7 +26,8 @@ Navigation fluide avec menu mobile responsive
 
 Design moderne avec animations subtiles
 
-📚 Page À Propos
+# Page À Propos
+
 Profil complet : Biographie et valeurs fondamentales
 
 Formation académique : UPC et ICHEC Brussels Management School
@@ -35,7 +40,8 @@ Leadership : Président LITEKIN et vision institutionnelle
 
 Galerie d'images et certificats
 
-📞 Page Contact
+# Page Contact
+
 Formulaire de contact avec validation
 
 Informations de contact détaillées
@@ -46,8 +52,10 @@ Réseaux sociaux et coordonnées
 
 Garantie de réponse sous 48h
 
-🛠️ Technologies Utilisées
-Frontend
+# Technologies Utilisées
+
+# Frontend
+
 HTML5 : Structure sémantique
 
 Tailwind CSS 3.4 : Framework CSS utilitaire
