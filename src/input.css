@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles personnalisés */
+@layer base {
+    body {
+        @apply bg-night-blue text-slate;
+    }
+}
+
+@layer components {
+    .card-hover {
+        @apply transition-all duration-300 ease-in-out;
+    }
+    .card-hover:hover {
+        @apply -translate-y-2 shadow-xl;
+    }
+}
