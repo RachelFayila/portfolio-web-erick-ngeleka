@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Erick Ngeleka</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'night-blue': '#0a192f',
+                        'navy': '#112240',
+                        'light-navy': '#233554',
+                        'slate': '#8892b0',
+                        'light-slate': '#ccd6f6',
+                        'yellow-accent': '#fbbf24',
+                        'yellow-dark': '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Police Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a192f;
+            color: #8892b0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ccd6f6;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 50%, #0a192f 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+            margin: 2rem 0;
+        }
+        input:focus, textarea:focus, select:focus {
+            box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.2);
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Navigation -->
+    <nav class="bg-night-blue border-b border-light-navy shadow-xl sticky top-0 z-50 backdrop-blur-sm bg-opacity-90">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-light-slate hover:text-yellow-accent transition duration-300">
+                    Erick<span class="text-yellow-accent">Ngeleka</span>
+                </a>
+                
+                <!-- Menu Mobile Toggle -->
+                <button id="menuToggle" class="md:hidden text-light-slate text-2xl focus:outline-none" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Menu Desktop -->
+                <ul id="navMenu" class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="text-light-slate hover:text-yellow-accent transition duration-300">Accueil</a></li>
+                    <li><a href="apropos.html" class="text-light-slate hover:text-yellow-accent transition duration-300">À propos</a></li>
+                    <li><a href="contact.html" class="text-yellow-accent font-semibold hover:text-yellow-accent transition duration-300 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-accent after:left-0 after:-bottom-1 after:scale-x-100">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div id="mobileMenu" class="md:hidden hidden py-6 border-t border-light-navy">
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="block text-light-slate hover:text-yellow-accent transition duration-300 py-2">Accueil</a></li>
+                    <li><a href="apropos.html" class="block text-light-slate hover:text-yellow-accent transition duration-300 py-2">À propos</a></li>
+                    <li><a href="contact.html" class="block text-yellow-accent font-semibold hover:text-yellow-accent transition duration-300 py-2">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="py-16 bg-gradient-to-r from-night-blue to-navy">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-light-slate">Contactez-moi</h1>
+                <p class="text-xl text-slate mb-6">Prêt à collaborer ou échanger sur des projets professionnels ou sportifs ?</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-yellow-accent/20 text-yellow-accent px-4 py-2 rounded-lg font-medium">Réponse sous 48h</span>
+                    <span class="bg-yellow-accent/20 text-yellow-accent px-4 py-2 rounded-lg font-medium">Collaborations variées</span>
+                    <span class="bg-yellow-accent/20 text-yellow-accent px-4 py-2 rounded-lg font-medium">Échanges professionnels</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info & Social -->
+                <div class="space-y-8">
+                    <!-- Contact Cards -->
+                    <div class="space-y-6">
+                        <!-- Phone -->
+                        <div class="bg-navy rounded-xl p-6 card-hover border border-light-navy">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-light-slate mb-1">Téléphone</h3>
+                                    <p class="text-slate mb-2">Disponible du lundi au vendredi</p>
+                                    <a href="tel:+243822502437" class="text-yellow-accent hover:text-yellow-dark text-lg font-medium transition duration-300">+243 82 25 02 437</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="bg-navy rounded-xl p-6 card-hover border border-light-navy">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-light-slate mb-1">Email</h3>
+                                    <p class="text-slate mb-2">Pour les demandes professionnelles</p>
+                                    <a href="mailto:erick.ngeleka@rawbank.cd" class="text-yellow-accent hover:text-yellow-dark text-lg font-medium transition duration-300">erick.ngeleka@rawbank.cd</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Location -->
+                        <div class="bg-navy rounded-xl p-6 card-hover border border-light-navy">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-light-slate mb-1">Localisation</h3>
+                                    <p class="text-slate mb-2">Basé à Kinshasa, RDC</p>
+                                    <p class="text-light-slate">Kinshasa, République Démocratique du Congo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Photo -->
+                    <div class="bg-navy rounded-xl overflow-hidden border-4 border-yellow-accent shadow-lg">
+                        <img src="images/boss.jpeg" alt="Erick Ngeleka - Portrait professionnel" class="w-full h-64 object-cover">
+                        <div class="p-4 text-center">
+                            <p class="text-light-slate font-medium">Erick Ngeleka</p>
+                            <p class="text-slate text-sm">Chef Produit Marketing & Président LITEKIN</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="bg-navy rounded-xl p-8 border border-light-navy">
+                        <h3 class="text-xl font-bold text-light-slate mb-6 text-center">Connectez-vous avec moi</h3>
+                        <div class="flex justify-center gap-6">
+                            <a href="https://www.linkedin.com/in/erick-ngeleka-351568188/" target="_blank" class="w-14 h-14 rounded-full bg-light-navy text-yellow-accent flex items-center justify-center hover:bg-yellow-accent hover:text-night-blue transition duration-300 transform hover:-translate-y-1" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://x.com/ErickNgeleka3" target="_blank" class="w-14 h-14 rounded-full bg-light-navy text-yellow-accent flex items-center justify-center hover:bg-yellow-accent hover:text-night-blue transition duration-300 transform hover:-translate-y-1" aria-label="Twitter">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="https://www.instagram.com/erick_ngeleka4?igsh=MTV2MTZ5Y2RjYTBjdw==" target="_blank" class="w-14 h-14 rounded-full bg-light-navy text-yellow-accent flex items-center justify-center hover:bg-yellow-accent hover:text-night-blue transition duration-300 transform hover:-translate-y-1" aria-label="Instagram">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://www.facebook.com/Rafaelerickngeleka" target="_blank" class="w-14 h-14 rounded-full bg-light-navy text-yellow-accent flex items-center justify-center hover:bg-yellow-accent hover:text-night-blue transition duration-300 transform hover:-translate-y-1" aria-label="Facebook">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-center text-slate mt-6">Suivez-moi pour des actualités professionnelles et sportives</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-12 h-12 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center">
+                            <i class="fas fa-paper-plane text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-light-slate">Envoyez un message</h2>
+                            <p class="text-slate">Je vous répondrai dans les plus brefs délais</p>
+                        </div>
+                    </div>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-light-slate mb-2 font-medium">
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-user text-yellow-accent"></i>
+                                    Nom complet *
+                                </span>
+                            </label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 bg-light-navy border border-light-navy rounded-lg text-light-slate placeholder-slate focus:outline-none focus:border-yellow-accent transition duration-300"
+                                   placeholder="Votre nom et prénom"
+                                   aria-required="true">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-light-slate mb-2 font-medium">
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-envelope text-yellow-accent"></i>
+                                    Email *
+                                </span>
+                            </label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 bg-light-navy border border-light-navy rounded-lg text-light-slate placeholder-slate focus:outline-none focus:border-yellow-accent transition duration-300"
+                                   placeholder="votre@email.com"
+                                   aria-required="true">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-light-slate mb-2 font-medium">
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-tag text-yellow-accent"></i>
+                                    Sujet *
+                                </span>
+                            </label>
+                            <select id="subject" name="subject" required 
+                                    class="w-full px-4 py-3 bg-light-navy border border-light-navy rounded-lg text-light-slate focus:outline-none focus:border-yellow-accent transition duration-300 appearance-none"
+                                    aria-required="true">
+                                <option value="" disabled selected>Sélectionnez un sujet</option>
+                                <option value="collaboration">Collaboration professionnelle</option>
+                                <option value="sport">Projet sportif</option>
+                                <option value="speaking">Conférence / Présentation</option>
+                                <option value="mentoring">Mentorat</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-light-slate mb-2 font-medium">
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-comment-alt text-yellow-accent"></i>
+                                    Message *
+                                </span>
+                            </label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full px-4 py-3 bg-light-navy border border-light-navy rounded-lg text-light-slate placeholder-slate focus:outline-none focus:border-yellow-accent transition duration-300 resize-none"
+                                      placeholder="Décrivez votre projet ou demande..."
+                                      aria-required="true"></textarea>
+                        </div>
+                        
+                        <div class="flex items-center gap-2 text-sm text-slate">
+                            <i class="fas fa-info-circle text-yellow-accent"></i>
+                            <span>Tous les champs marqués d'un * sont obligatoires</span>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-yellow-accent hover:bg-yellow-dark text-night-blue font-bold py-4 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-1 active:translate-y-0">
+                            <i class="fas fa-paper-plane"></i>
+                            Envoyer le message
+                        </button>
+                        
+                        <div id="formMessage" class="hidden p-4 rounded-lg text-center"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Availability Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-light-slate">Domaines de collaboration</h2>
+                <p class="text-xl text-slate max-w-3xl mx-auto">Je suis disponible pour différents types de collaborations professionnelles et sportives</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Professional Collaboration -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy">
+                    <div class="w-14 h-14 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-briefcase text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-light-slate mb-6 text-center">Collaborations professionnelles</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Stratégie marketing bancaire et innovation produit</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Développement de programmes jeunesse et employabilité</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Consultance en management et leadership</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Formations et ateliers professionnels</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Sports Engagement -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy">
+                    <div class="w-14 h-14 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-trophy text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-light-slate mb-6 text-center">Engagements sportifs</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Organisation et parrainage de tournois de tennis</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Conférences sur le sport et le leadership</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Mentorat de jeunes sportifs talentueux</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Développement de structures sportives</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Media & Speaking -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy">
+                    <div class="w-14 h-14 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-microphone-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-light-slate mb-6 text-center">Médias & Conférences</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Interviews et interventions médiatiques</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Conférences sur l'équilibre vie pro/sport</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Panels de discussion sur le leadership</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-yellow-accent mt-1"></i>
+                            <span class="text-light-slate">Participation à des podcasts et émissions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Response Time -->
+    <section class="py-16 bg-gradient-to-r from-night-blue to-navy">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div class="w-20 h-20 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-light-slate mb-4">Temps de réponse garanti</h3>
+                        <p class="text-xl text-slate mb-6">Je m'engage à répondre à toutes les demandes dans un délai maximum de 48 heures ouvrables.</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="bg-navy/50 px-6 py-3 rounded-lg">
+                                <div class="text-2xl font-bold text-yellow-accent">48h</div>
+                                <div class="text-light-slate text-sm">Réponse garantie</div>
+                            </div>
+                            <div class="bg-navy/50 px-6 py-3 rounded-lg">
+                                <div class="text-2xl font-bold text-yellow-accent">100%</div>
+                                <div class="text-light-slate text-sm">Taux de réponse</div>
+                            </div>
+                            <div class="bg-navy/50 px-6 py-3 rounded-lg">
+                                <div class="text-2xl font-bold text-yellow-accent">24/7</div>
+                                <div class="text-light-slate text-sm">Formulaire disponible</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-night-blue border-t border-light-navy py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo et description -->
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-bold mb-2 text-light-slate hover:text-yellow-accent transition duration-300">
+                        <a href="index.html">Erick<span class="text-yellow-accent">Ngeleka</span></a>
+                    </h3>
+                    <p class="text-slate italic">Leadership, Excellence & Discipline</p>
+                    <p class="text-slate text-sm mt-2">contact@erickngeleka.com</p>
+                </div>
+                
+                <!-- Liens rapides -->
+                <div class="mb-8 md:mb-0">
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 items-center">
+                        <a href="index.html" class="text-slate hover:text-yellow-accent transition duration-300">Accueil</a>
+                        <a href="apropos.html" class="text-slate hover:text-yellow-accent transition duration-300">À propos</a>
+                        <a href="contact.html" class="text-yellow-accent font-semibold hover:text-yellow-dark transition duration-300">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Copyright -->
+                <div class="text-center">
+                    <p class="text-slate text-sm">&copy; <span id="currentYear"></span> Erick Ngeleka. Tous droits réservés.</p>
+                    <p class="text-slate mt-2 text-sm">Site conçu et développé par <strong class="text-yellow-accent">fayiladigitahub</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

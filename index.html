@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erick Ngeleka | Accueil</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'night-blue': '#0a192f',
+                        'navy': '#112240',
+                        'light-navy': '#233554',
+                        'slate': '#8892b0',
+                        'light-slate': '#ccd6f6',
+                        'yellow-accent': '#fbbf24',
+                        'yellow-dark': '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Police Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a192f;
+            color: #8892b0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ccd6f6;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 50%, #0a192f 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+        }
+        .border-glow {
+            border-color: #233554;
+        }
+        .border-glow:hover {
+            border-color: #fbbf24;
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Navigation -->
+    <nav class="bg-night-blue border-b border-light-navy shadow-xl sticky top-0 z-50 backdrop-blur-sm bg-opacity-90">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-light-slate">
+                    Erick<span class="text-yellow-accent">Ngeleka</span>
+                </a>
+                
+                <!-- Menu Mobile Toggle -->
+                <button id="menuToggle" class="md:hidden text-light-slate text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Menu Desktop -->
+                <ul id="navMenu" class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="text-yellow-accent font-semibold hover:text-yellow-accent transition duration-300 relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-yellow-accent after:left-0 after:-bottom-1 after:scale-x-100">Accueil</a></li>
+                    <li><a href="apropos.html" class="text-light-slate hover:text-yellow-accent transition duration-300">Apropos</a></li>
+                    <li><a href="contact.html" class="text-light-slate hover:text-yellow-accent transition duration-300">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div id="mobileMenu" class="md:hidden hidden py-6 border-t border-light-navy">
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="block text-yellow-accent font-semibold hover:text-yellow-accent transition">Accueil</a></li>
+                    <li><a href="apropos.html" class="block text-light-slate hover:text-yellow-accent transition">Apropos</a></li>
+                    <li><a href="contact.html" class="block text-light-slate hover:text-yellow-accent transition">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 md:py-32">
+        <div class="absolute inset-0 bg-gradient-to-b from-night-blue via-navy to-night-blue opacity-90"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Hero Text -->
+                <div class="md:w-1/2 mb-16 md:mb-0">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 text-light-slate leading-tight">
+                        Erick <span class="text-yellow-accent">Ngeleka</span>
+                    </h1>
+                    
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-medium">Chef Produit Marketing</span>
+                    <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-medium">Responsable du programme We Act</span>
+                </div>
+                    
+                    <p class="text-2xl mb-10 text-light-slate leading-relaxed">
+                        Leadership, Excellence & Discipline au service du développement institutionnel et sportif en RDC
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <a href="apropos.html" class="group relative overflow-hidden bg-yellow-accent hover:bg-yellow-dark text-night-blue font-bold py-4 px-8 rounded-lg transition-all duration-300 text-center transform hover:-translate-y-1">
+                            <span class="relative z-10">Découvrir mon profil</span>
+                            <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        </a>
+                        <a href="contact.html" class="group relative overflow-hidden border-2 border-yellow-accent hover:bg-yellow-accent text-yellow-accent hover:text-night-blue font-bold py-4 px-8 rounded-lg transition-all duration-300 text-center transform hover:-translate-y-1">
+                            <span class="relative z-10">Me contacter</span>
+                            <div class="absolute inset-0 bg-yellow-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="md:w-2/5 flex justify-center">
+                    <div class="relative group">
+                        <div class="w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 border-light-navy shadow-2xl transform group-hover:border-yellow-accent transition-all duration-500">
+                            <img src="images/Mr Erick.jpeg" alt="Erick Ngeleka - Portrait professionnel" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-night-blue text-yellow-accent p-6 rounded-xl shadow-2xl border border-light-navy transform group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-award text-4xl"></i>
+                        </div>
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-yellow-accent rounded-tl-2xl opacity-50"></div>
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-yellow-accent rounded-br-2xl opacity-50"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gradient-to-b from-night-blue via-navy to-night-blue">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Carrière Professionnelle -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy border-glow">
+                    <div class="text-yellow-accent mb-8 transform hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-briefcase text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 text-light-slate">Carrière Professionnelle</h3>
+                    <p class="text-slate mb-8 leading-relaxed">
+                        Expert en stratégie marketing bancaire avec plus de 9 ans d'expérience chez Rawbank.
+                    </p>
+                    <a href="apropos.html" class="group inline-flex items-center bg-light-navy hover:bg-yellow-accent text-light-slate hover:text-night-blue font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        <span>Voir ma carrière</span>
+                        <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </a>
+                </div>
+                
+                <!-- Parcours Sportif -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy border-glow">
+                    <div class="text-yellow-accent mb-8 transform hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-tennis-ball text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 text-light-slate">Parcours Sportif</h3>
+                    <p class="text-slate mb-8 leading-relaxed">
+                        Tennisman de haut niveau avec 19 ans d'expérience et triple vainqueur du tournoi Rawbank.
+                    </p>
+                    <a href="apropos.html" class="group inline-flex items-center bg-light-navy hover:bg-yellow-accent text-light-slate hover:text-night-blue font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        <span>Voir mon parcours</span>
+                        <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </a>
+                </div>
+                
+                <!-- Formation Académique -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy border-glow">
+                    <div class="text-yellow-accent mb-8 transform hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-graduation-cap text-5xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 text-light-slate">Formation Académique</h3>
+                    <p class="text-slate mb-8 leading-relaxed">
+                        Diplômé de l'Université Protestante au Congo et de l'ICHEC Brussels Management School.
+                    </p>
+                    <a href="formation.html" class="group inline-flex items-center bg-light-navy hover:bg-yellow-accent text-light-slate hover:text-night-blue font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        <span>Voir ma formation</span>
+                        <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Statistiques Section -->
+            <div class="mt-20 pt-10 border-t border-light-navy">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-yellow-accent mb-2">9+</div>
+                        <div class="text-light-slate">Années d'expérience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-yellow-accent mb-2">19</div>
+                        <div class="text-light-slate">Ans de tennis</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-yellow-accent mb-2">3×</div>
+                        <div class="text-light-slate">Champion Rawbank</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold text-yellow-accent mb-2">2</div>
+                        <div class="text-light-slate">Diplômes prestigieux</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-night-blue border-t border-light-navy py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo et description -->
+                <div class="mb-10 md:mb-0 text-center md:text-left">
+                    <h3 class="text-3xl font-bold mb-3 text-light-slate">
+                        Erick<span class="text-yellow-accent">Ngeleka</span>
+                    </h3>
+                    <p class="text-slate italic">Leadership, Excellence & Discipline</p>
+                    <div class="flex space-x-4 mt-6 justify-center md:justify-start">
+                        <a href="https://www.linkedin.com/in/erick-ngeleka-351568188/" class="w-10 h-10 rounded-full bg-light-navy text-yellow-accent flex items-center justify-center hover:bg-yellow-accent hover:text-night-blue transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://x.com/ErickNgeleka3" class="w-10 h-10 rounded-full bg-light-navy text-yellow-accent flex items-center justify-center hover:bg-yellow-accent hover:text-night-blue transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="Erick.Ngeleka@rawbank.cd" class="w-10 h-10 rounded-full bg-light-navy text-yellow-accent flex items-center justify-center hover:bg-yellow-accent hover:text-night-blue transition duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Liens rapides -->
+                <div class="mb-8 md:mb-0">
+                    <div class="flex space-x-6">
+                        <a href="index.html" class="text-slate hover:text-yellow-accent transition">Accueil</a>
+                        <a href="apropos.html" class="text-slate hover:text-yellow-accent transition">À propos</a>
+                        <a href="contact.html" class="text-slate hover:text-yellow-accent transition">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Copyright -->
+                <div class="text-center md:text-right">
+                    <div class="bg-light-navy rounded-xl p-6 border border-light-navy">
+                        <p class="text-slate text-sm">&copy; 2026 Erick Ngeleka. Tous droits réservés.</p>
+                        <p class="text-slate mt-2 text-sm">Site conçu et développé par <strong class="text-yellow-accent">fayiladigitahub</strong></p>
+                        <div class="mt-4 pt-4 border-t border-light-navy">
+                            <p class="text-xs text-slate">Excellence dans chaque détail</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

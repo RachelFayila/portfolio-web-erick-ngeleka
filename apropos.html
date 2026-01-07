@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos | Erick Ngeleka</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'night-blue': '#0a192f',
+                        'navy': '#112240',
+                        'light-navy': '#233554',
+                        'slate': '#8892b0',
+                        'light-slate': '#ccd6f6',
+                        'yellow-accent': '#fbbf24',
+                        'yellow-dark': '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Police Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a192f;
+            color: #8892b0;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ccd6f6;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 50%, #0a192f 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .section-padding {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        .section-anchor {
+            display: block;
+            position: relative;
+            top: -80px;
+            visibility: hidden;
+        }
+        .nav-link.active {
+            color: #fbbf24;
+            font-weight: 600;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #fbbf24;
+            left: 0;
+            bottom: -4px;
+        }
+        .image-placeholder {
+            background: linear-gradient(45deg, #112240, #233554);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8892b0;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Navigation -->
+    <nav class="bg-night-blue border-b border-light-navy shadow-xl sticky top-0 z-50 backdrop-blur-sm bg-opacity-90">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-light-slate hover:text-yellow-accent transition duration-300">
+                    Erick<span class="text-yellow-accent">Ngeleka</span>
+                </a>
+                
+                <!-- Menu Mobile Toggle -->
+                <button id="menuToggle" class="md:hidden text-light-slate text-2xl focus:outline-none" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <!-- Menu Desktop -->
+                <ul id="navMenu" class="hidden md:flex space-x-6">
+                    <li><a href="index.html" class="text-light-slate hover:text-yellow-accent transition duration-300 nav-link">Accueil</a></li>
+                    <li><a href="#apropos" class="text-yellow-accent font-semibold hover:text-yellow-accent transition duration-300 nav-link active">À propos</a></li>
+                    <li><a href="contact.html" class="text-light-slate hover:text-yellow-accent transition duration-300 nav-link">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div id="mobileMenu" class="md:hidden hidden py-6 border-t border-light-navy">
+                <ul class="space-y-4">
+                    <li><a href="index.html" class="block text-light-slate hover:text-yellow-accent transition duration-300 py-2">Accueil</a></li>
+                    <li><a href="#apropos" class="block text-yellow-accent font-semibold hover:text-yellow-accent transition duration-300 py-2">À propos</a></li>
+                    <li><a href="contact.html" class="block text-light-slate hover:text-yellow-accent transition duration-300 py-2">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-r from-night-blue to-navy">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-light-slate">À propos de moi</h1>
+                <p class="text-xl md:text-2xl text-slate mb-8">Découvrez mon parcours complet : une fusion d'excellence professionnelle, sportive et de leadership</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-medium">Chef Produit Marketing</span>
+                    <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-medium">Responsable We Act</span>
+                    <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-medium">Tennisman élite</span>
+                    <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-medium">Leader LITEKIN</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="py-8 bg-light-navy">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#profil" class="bg-navy text-light-slate hover:bg-yellow-accent hover:text-night-blue px-4 py-2 rounded-lg transition flex items-center gap-2">
+                    <i class="fas fa-user"></i> Profil
+                </a>
+                <a href="#formation" class="bg-navy text-light-slate hover:bg-yellow-accent hover:text-night-blue px-4 py-2 rounded-lg transition flex items-center gap-2">
+                    <i class="fas fa-graduation-cap"></i> Formation
+                </a>
+                <a href="#carriere" class="bg-navy text-light-slate hover:bg-yellow-accent hover:text-night-blue px-4 py-2 rounded-lg transition flex items-center gap-2">
+                    <i class="fas fa-briefcase"></i> Carrière
+                </a>
+                <a href="#competences" class="bg-navy text-light-slate hover:bg-yellow-accent hover:text-night-blue px-4 py-2 rounded-lg transition flex items-center gap-2">
+                    <i class="fas fa-chart-line"></i> Compétences
+                </a>
+                <a href="#sport" class="bg-navy text-light-slate hover:bg-yellow-accent hover:text-night-blue px-4 py-2 rounded-lg transition flex items-center gap-2">
+                    <i class="fas fa-trophy"></i> Sport
+                </a>
+                <a href="#leadership" class="bg-navy text-light-slate hover:bg-yellow-accent hover:text-night-blue px-4 py-2 rounded-lg transition flex items-center gap-2">
+                    <i class="fas fa-users"></i> Leadership
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Profil -->
+    <section id="profil" class="section-padding">
+        <span class="section-anchor" id="apropos"></span>
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-light-slate">Profil Complet</h2>
+                <div class="w-24 h-1 bg-yellow-accent mx-auto"></div>
+            </div>
+            
+            <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy mb-8">
+                <div class="flex flex-col lg:flex-row gap-8 items-center">
+                    <div class="lg:w-2/5">
+                        <div class="rounded-xl overflow-hidden border-4 border-yellow-accent shadow-lg">
+                            <img src="images/photo pro-noir.jpeg" alt="Erick Ngeleka - Portrait tennis professionnel" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="lg:w-3/5">
+                        <h3 class="text-2xl font-bold mb-6 text-light-slate">Une personnalité multidimensionnelle</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate leading-relaxed">Je m'appelle <strong class="text-yellow-accent">Erick Ngeleka</strong>, congolais, mesurant 1m92. Professionnel bancaire, sportif de haut niveau et leader institutionnel engagé dans le développement du tennis en République Démocratique du Congo.</p>
+                            <p class="text-slate leading-relaxed">Avec plus de 9 ans d'expérience chez Rawbank et 19 ans de pratique du tennis, j'incarne l'équilibre entre excellence professionnelle et performance sportive.</p>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                            <div class="bg-light-navy rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold text-yellow-accent">1m92</div>
+                                <p class="text-sm text-light-slate">Taille</p>
+                            </div>
+                            <div class="bg-light-navy rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold text-yellow-accent">19 ans</div>
+                                <p class="text-sm text-light-slate">Expérience tennis</p>
+                            </div>
+                            <div class="bg-light-navy rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold text-yellow-accent">9+ ans</div>
+                                <p class="text-sm text-light-slate">Carrière bancaire</p>
+                            </div>
+                            <div class="bg-light-navy rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold text-yellow-accent">RDC</div>
+                                <p class="text-sm text-light-slate">Nationalité</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Values Section -->
+            <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy">
+                <h3 class="text-2xl font-bold mb-8 text-light-slate text-center">Mes valeurs fondamentales</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Discipline -->
+                    <div class="bg-light-navy rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-flag text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-light-slate mb-3">Discipline</h4>
+                        <p class="text-slate">Rigueur et constance dans chaque engagement professionnel et sportif</p>
+                    </div>
+                    
+                    <!-- Leadership -->
+                    <div class="bg-light-navy rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-light-slate mb-3">Leadership</h4>
+                        <p class="text-slate">Inspirer et fédérer autour d'une vision commune pour le développement</p>
+                    </div>
+                    
+                    <!-- Excellence -->
+                    <div class="bg-light-navy rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-trophy text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-light-slate mb-3">Excellence</h4>
+                        <p class="text-slate">Recherche constante de la performance optimale dans tous les domaines</p>
+                    </div>
+                    
+                    <!-- Impact -->
+                    <div class="bg-light-navy rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-light-slate mb-3">Impact</h4>
+                        <p class="text-slate">Contribuer activement au développement de mon pays et de sa jeunesse</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Formation -->
+    <section id="formation" class="section-padding bg-gradient-to-b from-night-blue via-navy to-night-blue">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-light-slate">Formation Académique</h2>
+                <div class="w-24 h-1 bg-yellow-accent mx-auto"></div>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- ICHEC -->
+                <div class="bg-navy/80 backdrop-blur-sm rounded-2xl p-8 card-hover border border-light-navy">
+                    <div class="flex flex-col md:flex-row items-start gap-6 mb-8">
+                        <div class="w-16 h-16 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-light-slate mb-2">ICHEC Brussels Management School</h3>
+                            <div class="text-yellow-accent font-semibold">2025–2026</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-yellow-accent mb-4">Executive MBA – Certificat Executive Innovative Sales Strategy</h4>
+                        
+                        <div class="mb-6">
+                            <div class="rounded-xl overflow-hidden border-2 border-yellow-accent max-w-md">
+                                
+                                <img src="images/certicat-1.jpg" alt="Certificat ICHEC Brussels Management School" class="w-full h-48 object-cover">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-slate leading-relaxed">Fondé en 1954, ICHEC est l'une des principales business schools de Belgique, reconnue pour son excellence académique et ses liens étroits avec le monde des affaires.</p>
+                        </div>
+                        
+                        <div>
+                            <h5 class="text-lg font-bold text-light-slate mb-3">Programme Executive MBA :</h5>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Stratégie de vente innovante</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Leadership transformationnel</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Gestion financière avancée</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Marketing digital</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Réseau international</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- UPC -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy">
+                    <div class="flex flex-col md:flex-row items-start gap-6 mb-8">
+                        <div class="w-16 h-16 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-university text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-light-slate mb-2">Université Protestante au Congo (UPC)</h3>
+                            <div class="text-yellow-accent font-semibold">2012–2017</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-yellow-accent mb-4">Licence en Économie – Économie Monétaire</h4>
+                        
+                        <div class="mb-6">
+                            <div class="rounded-xl overflow-hidden border-2 border-yellow-accent max-w-md">
+                                
+                                <img src="images/certificat-2.png" alt="Diplôme Université Protestante au Congo" class="w-full h-48 object-cover">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <p class="text-slate leading-relaxed">L'UPC est l'une des universités privées les plus prestigieuses de la République Démocratique du Congo, fondée en 1959.</p>
+                        </div>
+                        
+                        <div>
+                            <h5 class="text-lg font-bold text-light-slate mb-3">Parcours académique :</h5>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Spécialisation en économie monétaire</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Théories économiques avancées</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Finance internationale</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Développement économique</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-slate">Recherche académique</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Carrière -->
+    <section id="carriere" class="section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-light-slate">Carrière Professionnelle</h2>
+                <div class="w-24 h-1 bg-yellow-accent mx-auto"></div>
+            </div>
+            
+            <!-- Rawbank Introduction -->
+            <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy mb-8">
+                <div class="flex flex-col lg:flex-row gap-8 items-center">
+                    <div class="lg:w-2/5">
+                        <div class="rounded-xl overflow-hidden border-4 border-yellow-accent shadow-lg">
+                           
+                            <img src="images/image-E-N.jpeg" alt="Environnement professionnel Rawbank" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="lg:w-3/5">
+                        <h3 class="text-2xl font-bold mb-6 text-light-slate">Rawbank - Excellence professionnelle</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate leading-relaxed">Erick Ngeleka est reconnu comme un <strong class="text-yellow-accent">talent Rawbank</strong>, incarnant l'excellence professionnelle et l'équilibre entre carrière bancaire et sportive.</p>
+                            <p class="text-slate leading-relaxed">Rawbank, soucieuse du bien-être et de l'épanouissement de son personnel, accompagne ses projets sportifs, conformément à sa culture d'entreprise.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- We Act Program -->
+            <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy">
+                <div class="flex flex-col lg:flex-row gap-8 items-center">
+                    <div class="lg:w-2/5">
+                        <div class="rounded-xl overflow-hidden border-4 border-yellow-accent shadow-lg">
+                          
+                            <img src="images/the GOAT.jpeg" alt="Événement We Act avec jeunes" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="lg:w-3/5">
+                        <h3 class="text-2xl font-bold mb-6 text-light-slate">Programme We Act</h3>
+                        <p class="text-slate mb-6 leading-relaxed">We Act est un programme innovant de Rawbank qui soutient et accompagne la jeunesse congolaise dans plusieurs domaines stratégiques :</p>
+                        
+                        <!-- Domains -->
+                        <div class="mb-8">
+                            <div class="flex flex-wrap gap-3 mb-4">
+                                <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-semibold">Digital</span>
+                                <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-semibold">Entrepreneuriat</span>
+                                <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-semibold">Arts & Culture</span>
+                                <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-semibold">Sport</span>
+                                <span class="bg-yellow-accent text-night-blue px-4 py-2 rounded-lg font-semibold">RSE/Écologie</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Offer -->
+                        <div>
+                            <h4 class="text-xl font-bold text-yellow-accent mb-4">Offre du programme :</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-light-slate">Formations & Ateliers de renforcement des compétences</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-light-slate">Concours & Challenges pour stimuler l'innovation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-light-slate">Mentorat par des experts</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-yellow-accent mt-1 mr-3"></i>
+                                    <span class="text-light-slate">Financement de projets prometteurs</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Sport -->
+    <section id="sport" class="section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-light-slate">Sport & Performances</h2>
+                <div class="w-24 h-1 bg-yellow-accent mx-auto"></div>
+            </div>
+            
+            <!-- Tennis Action Section -->
+            <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy mb-8">
+                <div class="flex flex-col lg:flex-row gap-8 items-center">
+                    <div class="lg:w-2/5">
+                        <div class="rounded-xl overflow-hidden border-4 border-yellow-accent shadow-lg">
+                            <img src="images/photo tenis.jpeg" alt="Erick Ngeleka en action tennis compétition" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="lg:w-3/5">
+                        <h3 class="text-2xl font-bold mb-6 text-light-slate">Tennis - Une passion depuis l'enfance</h3>
+                        <p class="text-slate mb-4 leading-relaxed">Passionné de tennis depuis l'âge de 9 ans, j'ai développé à travers ce sport des valeurs fondamentales qui guident aujourd'hui ma vie professionnelle et personnelle.</p>
+                        <p class="text-slate mb-8 leading-relaxed">Le tennis m'a enseigné la discipline, la persévérance, la stratégie et l'importance de la gestion du stress en situation de compétition.</p>
+                        
+                        <!-- Highlights -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="flex items-center gap-4 p-4 bg-light-navy rounded-lg">
+                                <div class="w-12 h-12 rounded-full bg-night-blue text-yellow-accent flex items-center justify-center">
+                                    <i class="fas fa-calendar-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-light-slate">19 ans d'expérience</h4>
+                                    <p class="text-sm text-slate">Pratique continue depuis l'enfance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 p-4 bg-light-navy rounded-lg">
+                                <div class="w-12 h-12 rounded-full bg-night-blue text-yellow-accent flex items-center justify-center">
+                                    <i class="fas fa-trophy text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-light-slate">Triple vainqueur</h4>
+                                    <p class="text-sm text-slate">Tournoi interne Rawbank</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 p-4 bg-light-navy rounded-lg">
+                                <div class="w-12 h-12 rounded-full bg-night-blue text-yellow-accent flex items-center justify-center">
+                                    <i class="fas fa-flag text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-light-slate">Classement national</h4>
+                                    <p class="text-sm text-slate">Parmi les meilleurs joueurs de RDC</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tournament Gallery -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-8 text-light-slate text-center">Moments Forts en Compétition</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-navy rounded-xl overflow-hidden border-2 border-yellow-accent">
+                     
+                        <img src="images/tournoi.jpg" alt="Victoire tournoi Rawbank 2023" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-light-slate mb-1">Tournoi Rawbank 2023</h4>
+                            <p class="text-sm text-slate">Triple couronne consécutive</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-navy rounded-xl overflow-hidden border-2 border-yellow-accent">
+                        <img src="images/chapion.jpeg" alt="Championnat national RDC 2024" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-light-slate mb-1">Championnat National 2024</h4>
+                            <p class="text-sm text-slate">Classé Top 10 national</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-navy rounded-xl overflow-hidden border-2 border-yellow-accent">
+                        <img src="images/image-Tennis.jpeg" alt="Session d'entraînement tennis" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-light-slate mb-1">Préparation Intensive</h4>
+                            <p class="text-sm text-slate">Routine d'entraînement rigoureuse</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sports Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Stat 1 -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy text-center">
+                    <div class="text-5xl font-bold text-yellow-accent mb-4">19</div>
+                    <h4 class="text-xl font-bold text-light-slate mb-2">années de pratique</h4>
+                    <p class="text-slate">Début à 9 ans, pratique continue</p>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy text-center">
+                    <div class="text-5xl font-bold text-yellow-accent mb-4">3</div>
+                    <h4 class="text-xl font-bold text-light-slate mb-2">titres consécutifs</h4>
+                    <p class="text-slate">Tournoi interne Rawbank</p>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy text-center">
+                    <div class="text-5xl font-bold text-yellow-accent mb-4">65%</div>
+                    <h4 class="text-xl font-bold text-light-slate mb-2">taux de victoires</h4>
+                    <p class="text-slate">Performances compétitives</p>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy text-center">
+                    <div class="text-5xl font-bold text-yellow-accent mb-4">50+</div>
+                    <h4 class="text-xl font-bold text-light-slate mb-2">tournois disputés</h4>
+                    <p class="text-slate">Expérience compétitive riche</p>
+                </div>
+            </div>
+            
+            <!-- Palmares -->
+            <div class="bg-navy rounded-2xl p-8 card-hover border border-yellow-accent">
+                <h3 class="text-2xl font-bold mb-6 text-light-slate text-center">Palmarès & Distinctions</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-light-navy rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-crown text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-light-slate mb-2">Triple Vainqueur</h4>
+                        <p class="text-slate text-sm">Tournoi interne Rawbank</p>
+                        <div class="mt-3">
+                            <img src="images/image goat.jpg" alt="Trophée Rawbank" class="w-full h-35 object-cover rounded-lg">
+                        </div>
+                    </div>
+                    
+                    <div class="bg-light-navy rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-medal text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-light-slate mb-2">Classement National</h4>
+                        <p class="text-slate text-sm">Parmi les 10 meilleurs joueurs de RDC</p>
+                        <div class="mt-3">
+                            <img src="images/photo tenis.jpeg" alt="Classement national tennis RDC" class="w-full h-35 object-cover rounded-lg">
+                        </div>
+                    </div>
+                    
+                    <div class="bg-light-navy rounded-xl p-6 text-center">
+                        <div class="w-16 h-16 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-award text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-light-slate mb-2">Talent Rawbank</h4>
+                        <p class="text-slate text-sm">Reconnu pour l'excellence sportive et professionnelle</p>
+                        <div class="mt-3">
+                            <img src="images/sport.png" alt="Reconnaissance Rawbank" class="w-full h-35 object-cover rounded-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Leadership -->
+    <section id="leadership" class="section-padding bg-gradient-to-b from-night-blue via-navy to-night-blue">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-light-slate">Leadership & Vision</h2>
+                <div class="w-24 h-1 bg-yellow-accent mx-auto"></div>
+            </div>
+            
+            <!-- Leadership Intro -->
+            <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy mb-8">
+                <div class="flex flex-col lg:flex-row gap-8 items-center">
+                    <div class="lg:w-2/5">
+                        <div class="rounded-xl overflow-hidden border-4 border-yellow-accent shadow-lg">
+                            <img src="images/photo pro.jpg" alt="Présidence LITEKIN" class="w-full h-33 object-cover rounded-lg">
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="lg:w-3/5">
+                        <h3 class="text-2xl font-bold mb-6 text-light-slate">Leadership Institutionnel & Sportif</h3>
+                        <p class="text-slate mb-4 leading-relaxed">En tant que <strong class="text-yellow-accent">Président du Comité Provincial de la Ligue de Tennis de Kinshasa (LITEKIN)</strong>, j'incarne un leadership jeune et dynamique au service du développement du tennis congolais.</p>
+                        <p class="text-slate mb-8 leading-relaxed">Mon approche combine vision stratégique, gouvernance transparente et engagement communautaire pour redynamiser le sport en RDC.</p>
+                        
+                        <!-- Badges -->
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-light-navy text-yellow-accent px-4 py-2 rounded-lg">Visionnaire</span>
+                            <span class="bg-light-navy text-yellow-accent px-4 py-2 rounded-lg">Stratège</span>
+                            <span class="bg-light-navy text-yellow-accent px-4 py-2 rounded-lg">Rassembleur</span>
+                            <span class="bg-light-navy text-yellow-accent px-4 py-2 rounded-lg">Innovateur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- LITEKIN Events Gallery -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-8 text-light-slate text-center">Événements LITEKIN</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-navy rounded-xl overflow-hidden border-2 border-yellow-accent">
+                        <img src="images/photo tenis.jpeg" alt="Tournoi jeunes talents LITEKIN" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-light-slate mb-1">Tournoi Jeunes Talents</h4>
+                            <p class="text-sm text-slate">Détection et formation des futurs champions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-navy rounded-xl overflow-hidden border-2 border-yellow-accent">
+                        <img src="images/presse.png" alt="Conférence de presse LITEKIN" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-light-slate mb-1">Conférence de Presse</h4>
+                            <p class="text-sm text-slate">Présentation de la vision 2025-2030</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projects -->
+            <div class="bg-navy rounded-2xl p-8 card-hover border border-light-navy">
+                <h3 class="text-2xl font-bold mb-6 text-light-slate">Projets & Initiatives en Cours</h3>
+                <div class="space-y-6">
+                    <!-- Phase 1 -->
+                    <div class="bg-light-navy rounded-xl p-6">
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                                1
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-light-slate mb-3">Restructuration Organisationnelle</h4>
+                                <p class="text-slate mb-4">Mise en place d'une gouvernance transparente et efficace pour la LITEKIN</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="bg-navy text-yellow-accent px-3 py-1 rounded-lg text-sm">Élaboration des statuts</span>
+                                    <span class="bg-navy text-yellow-accent px-3 py-1 rounded-lg text-sm">Organisation des élections</span>
+                                    <span class="bg-navy text-yellow-accent px-3 py-1 rounded-lg text-sm">Structuration des commissions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Phase 2 -->
+                    <div class="bg-light-navy rounded-xl p-6">
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                                2
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-light-slate mb-3">Développement des Compétences</h4>
+                                <p class="text-slate mb-4">Programme de formation et d'encadrement pour les acteurs du tennis</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="bg-navy text-yellow-accent px-3 py-1 rounded-lg text-sm">Formation des entraîneurs</span>
+                                    <span class="bg-navy text-yellow-accent px-3 py-1 rounded-lg text-sm">Encadrement des arbitres</span>
+                                    <span class="bg-navy text-yellow-accent px-3 py-1 rounded-lg text-sm">Développement des jeunes talents</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Phase 3 -->
+                    <div class="bg-light-navy rounded-xl p-6">
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 rounded-full bg-yellow-accent text-night-blue flex items-center justify-center flex-shrink-0 text-xl font-bold">
+                                3
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-light-slate mb-3">Compétitions Structurées</h4>
+                                <p class="text-slate mb-4">Mise en place d'un calendrier sportif professionnel</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="bg-navy text-yellow-accent px-3 py-1 rounded-lg text-sm">Tournois réguliers</span>
+                                    <span class="bg-navy text-yellow-accent px-3 py-1 rounded-lg text-sm">Système de classement</span>
+                                    <span class="bg-navy text-yellow-accent px-3 py-1 rounded-lg text-sm">Événements promotionnels</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-night-blue to-navy">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-light-slate">Une vision intégrée pour l'excellence</h2>
+                <p class="text-xl text-slate mb-8">Professionnel bancaire, sportif de haut niveau et leader institutionnel - trois dimensions qui se renforcent mutuellement pour créer un impact durable.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-yellow-accent text-night-blue px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-dark transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        Me contacter
+                    </a>
+                    <a href="#top" class="bg-light-navy text-light-slate px-8 py-3 rounded-lg font-bold text-lg hover:bg-navy transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i class="fas fa-arrow-up"></i>
+                        Retour en haut
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-night-blue border-t border-light-navy py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo et description -->
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-bold mb-2 text-light-slate hover:text-yellow-accent transition duration-300">
+                        <a href="index.html">Erick<span class="text-yellow-accent">Ngeleka</span></a>
+                    </h3>
+                    <p class="text-slate italic">Leadership, Excellence & Discipline</p>
+                    <p class="text-slate text-sm mt-2">contact@erickngeleka.com</p>
+                </div>
+                
+                <!-- Liens rapides -->
+                <div class="mb-8 md:mb-0">
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 items-center">
+                        <a href="index.html" class="text-slate hover:text-yellow-accent transition duration-300">Accueil</a>
+                        <a href="#apropos" class="text-yellow-accent font-semibold hover:text-yellow-dark transition duration-300">À propos</a>
+                        <a href="contact.html" class="text-slate hover:text-yellow-accent transition duration-300">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Copyright -->
+                <div class="text-center">
+                    <p class="text-slate text-sm">&copy; <span id="currentYear"></span> Erick Ngeleka. Tous droits réservés.</p>
+                    <p class="text-slate mt-2 text-sm">Site conçu et développé par <strong class="text-yellow-accent">fayiladigitahub</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
